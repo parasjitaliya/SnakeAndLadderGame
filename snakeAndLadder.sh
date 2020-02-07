@@ -9,22 +9,27 @@ function checkOptions()
 {
 	options=$((RANDOM%3))
 	case $options in
-			  1)pos=$pos ;;
-			  2)pos=$(( $pos + $rolldie ))
-			    		 if [ $pos -gt $win_pos ]
-  						 then
-     					 	pos=$(( $pos - $randomCheck ))
-  						 fi
-					  	;;
-				3)pos=$(( $pos - $rolldie ))
-						if [ $pos -lt $win_pos ]
-  						then
-     				   	pos=$player_start_pos
-  					   fi
-					   ;;
+			  1)
+					pos=$pos 
+					;;
+			  2)
+					pos=$(( $pos + $rolldie ))
+			    	if [ $pos -gt $win_pos ]
+  					then
+     					pos=$(( $pos - $randomCheck ))
+  					fi
+					;;
+				3)
+					pos=$(( $pos - $rolldie ))
+					if [ $pos -lt $win_pos ]
+  					then
+     				   pos=$player_start_pos
+  					fi
+					;;
 	esac
+	echo $pos
 }
-while [ $pos -ne $win_pos ]
+while [ $pos -lt $win_pos ]
 do
 	checkOptions
 done 
