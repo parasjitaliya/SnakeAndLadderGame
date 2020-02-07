@@ -1,15 +1,18 @@
 #!/bin/bash
 echo "-------------welcome to new game------------------"
+echo "-------------1>for normal move 2>for ladder & 3> snake----------------"
 #ASSIGN VALUE FOR VARIABLE
 player_start_pos=0
 win_pos=100
 pos=$player_start_pos
-
+checkvalue=1
+totalrolldie=0
 function roll()
 {
+	
 	rolldie=$((RANDOM%6+1))
+	totalrolldie=$((totalrolldie+1))
 	echo $rolldie ..this trun
-	((totalrolldie+1))
 }
 function checkOptions()
 {
@@ -22,7 +25,7 @@ function checkOptions()
 					pos=$(( $pos + $rolldie ))
 			    	if [ $pos -gt $win_pos ]
   					then
-     					pos=$(( $pos - $randomCheck ))
+     					pos=$(( $pos - $rolldie ))
   					fi
 					;;
 				3)
@@ -35,9 +38,21 @@ function checkOptions()
 	esac
 	echo $pos
 }
+function playerTurn()
+{
+	echo $checkvalue....for player
+	if [[ $checkvalue -eq 1 ]]
+	then 
+		checkvalue=2
+	else
+		checkvalue=1
+	fi
+}
 while [ $pos -lt $win_pos ]
 do
 	roll
 	checkOptions
+	playerTurn
 done 
 echo "number of time randomcheck happened..:"$totalrolldie 
+echo Player $checkvalue won
