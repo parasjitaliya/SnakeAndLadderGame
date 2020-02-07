@@ -4,7 +4,13 @@ echo "-------------welcome to new game------------------"
 player_start_pos=0
 win_pos=100
 pos=$player_start_pos
-rolldie=$((RANDOM%6+1))
+
+function roll()
+{
+	rolldie=$((RANDOM%6+1))
+	echo $rolldie ..this trun
+	((totalrolldie+1))
+}
 function checkOptions()
 {
 	options=$((RANDOM%3))
@@ -31,5 +37,7 @@ function checkOptions()
 }
 while [ $pos -lt $win_pos ]
 do
+	roll
 	checkOptions
 done 
+echo "number of time randomcheck happened..:"$totalrolldie 
