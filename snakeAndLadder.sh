@@ -5,6 +5,7 @@ player_start_pos=0
 win_pos=100
 pos=$player_start_pos
 rolldie=$((RANDOM%6+1))
+#function for chaking operation
 function checkOptions(){
 options=$((RANDOM%3 + 1))
    case $options in
