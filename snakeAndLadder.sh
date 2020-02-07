@@ -12,7 +12,7 @@ options=$((RANDOM%3 + 1))
            2)pos=$(( $pos + $rolldie ))
                    if [ $pos -gt $win_pos ]
                    then
-                     pos=$(( $pos - $randomCheck ))
+                     pos=$(($pos-$randomCheck ))
                    fi
                   ;;
            3)pos=$(( $pos - $rolldie ))
