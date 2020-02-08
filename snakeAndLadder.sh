@@ -23,16 +23,16 @@ function checkOptions()
 					;;
 			  2)
 					pos=$(( $pos + $rolldie ))
-			    	if [ $pos -gt $win_pos ]
+				    	if [ $pos -gt $win_pos ]
   					then
-     					pos=$(( $pos - $rolldie ))
+     						pos=$(( $pos - $rolldie ))
   					fi
 					;;
 				3)
 					pos=$(( $pos - $rolldie ))
 					if [ $pos -lt $win_pos ]
   					then
-     				   pos=$player_start_pos
+						pos=$player_start_pos
   					fi
 					;;
 	esac
