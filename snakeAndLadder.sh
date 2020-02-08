@@ -9,7 +9,6 @@ checkvalue=1
 totalrolldie=0
 function roll()
 {
-	
 	rolldie=$((RANDOM%6+1))
 	totalrolldie=$((totalrolldie+1))
 	echo $rolldie ..this trun
@@ -48,11 +47,7 @@ function playerTurn()
 	else
 		checkvalue=1
 	fi
-}
-=======
-   	echo $pos	
 } 
->>>>>>> uc5-Ensure_exact_winposition
 while [ $pos -lt $win_pos ]
 do
 	roll
