@@ -21,18 +21,19 @@ function checkOptions()
 		1)
 			pos=$pos 
 			;;
-		2)	
+		2)
 			pos=$(( $pos + $rolldie ))
 			if [ $pos -gt $win_pos ]
-			then
-     				pos=$(( $pos - $randomCheck ))
+  			then
+     				pos=$(( $pos - $rolldie ))
   			fi
-		  	;;
+			;;
+
 		3)
 			pos=$(( $pos - $rolldie ))
 			if [ $pos -lt $win_pos ]
   			then
-     				pos=$player_start_pos
+     				pos=$pos
   			fi
 			;;
 	esac
