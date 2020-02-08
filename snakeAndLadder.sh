@@ -14,9 +14,10 @@ function roll()
 	totalrolldie=$((totalrolldie+1))
 	echo $rolldie ..this trun
 }
+#function for chaking operation
 function checkOptions()
 {
-	options=$((RANDOM%3))
+	options=$((RANDOM%3 + 1))
 	case $options in
 		1)
 			pos=$pos 
@@ -48,6 +49,10 @@ function playerTurn()
 		checkvalue=1
 	fi
 }
+=======
+   	echo $pos	
+} 
+>>>>>>> uc5-Ensure_exact_winposition
 while [ $pos -lt $win_pos ]
 do
 	roll
