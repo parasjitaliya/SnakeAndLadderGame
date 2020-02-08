@@ -31,7 +31,7 @@ function checkOptions()
 			pos=$(( $pos - $rolldie ))
 			if [ $pos -lt $win_pos ]
   			then
-     				pos=$player_start_pos
+     				pos=$pos
   			fi
 			;;
 	esac
